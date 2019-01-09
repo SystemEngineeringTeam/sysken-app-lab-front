@@ -1,12 +1,54 @@
 <template>
-  <div id="login">
-    <h1>ログインページ</h1>
-    email:<input type="email"><br>
-    password:<input type="password"><br>
-    <h1><button type="submit">ログインする</button></h1>
-    <router-link to="/user">userページへ</router-link>
-    <router-link to="/lab">labページへ</router-link>
-  </div>
+  <main class="container-fluid my-5 mx-auto">
+    <div id="login" class="col-12">
+      <div class="card mx-auto w-50">
+        <div class="card-body">
+          <form>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="password">
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-10 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example text-right">
+      <ul class="pagination text-right">
+        <li class="page-item">
+          <router-link to="/user" class="page-link">
+            <span aria-hidden="true">«</span>
+            <span class="sr-only">Previous</span>
+          </router-link>
+        </li>
+        <li class="page-item">
+          <router-link to="/user" class="page-link">userページへ</router-link>
+        </li>
+        <li class="page-item">
+          <router-link to="/lab" class="page-link">labページへ</router-link>
+        </li>
+        <li class="page-item">
+          <router-link to="/lab" class="page-link">
+            <span aria-hidden="true">»</span>
+            <span class="sr-only">Next</span>
+          </router-link>
+        </li>
+      </ul>
+    </nav>
+
+  </main>
 </template>
 
 <script>
@@ -14,9 +56,7 @@
     el: "#login",
     name: 'login',
     data() {
-      return {
-
-      }
+      return {}
     },
     /*created() {
       /*axios.get(GET_URL)

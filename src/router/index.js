@@ -1,6 +1,5 @@
 import Vue from "vue";
 import Router from "vue-router";
-import HelloWorld from "@/components/HelloWorld";
 import Lab from "@/pages/Lab";
 import Login from "@/pages/Login";
 import User from "@/pages/User";
@@ -9,11 +8,6 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-    {
-      path: "/",
-      name: "HelloWorld",
-      component: HelloWorld
-    },
     {
       path: "/lab",
       name: "Lab",
