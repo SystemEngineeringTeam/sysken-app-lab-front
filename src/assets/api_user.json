@@ -1,17 +1,10 @@
 {
   "id": 1,
-  "grade": 3,
   "name": "山田 太郎",
-  "gender": "male",
-  "laboratory": {
-    "id": 1,
-    "lab_name": "モバイルコンピューティング研究室",
-    "university": {
-      "id": 1,
-      "university_name": "愛知工業大学",
-      "prefecture": "愛知県"
-    },
-    "theme_of_lab": "無線通信技術、センサネットワークシステム、車車間通信システム、モノのインターネット(IOT)、 オーバーレイネットワーク、ネットワークプロトコル・アーキテクチャーなどの モバイルコンピューティング技術について研究しています。"
+  "gender": "男性",
+  "lab": {
+    "name": "モバイルコンピューティング研究室",
+    "overview": "モバイルコンピューティング研究室"
   },
-  "theme_of_research": "IoTについて研究しています．"
+  "context": "hage"
 }
