@@ -1,15 +1,4 @@
 <template>
-  <!-- header>
-    <nav class="navbar navbar-light" style="background-color: #03A9F4;">
-      <div>
-        <router-link to="/lab">Go to lab</router-link>
-        <router-link to="/login">Go to login</router-link>
-      </div>
-    </nav>
-  </header-->
-  <!--div class="ui active dimmer loading" v-if="loading">
-    <div class="ui massive text loader">Loading</div>
-  </div-->
   <div class="container-fluid" id="user" v-cloak>
     <h1>{{ json_data }}</h1>
     <div class="ui divider"></div>
