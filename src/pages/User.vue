@@ -11,51 +11,56 @@
     <div class="ui massive text loader">Loading</div>
   </div-->
   <div class="container-fluid" id="user" v-cloak>
-    <div class="row">
-      <div class="col">
-        <section class="container-fluid">
-          <div class="row active-with-click">
-            <div class="col-md-4 col-sm-6 col-xs-12 my-5">
-              <div class="d-block">
-                <article class="material-card Light-Blue">
-                  <h2>
-                    <span class="name">{{ name }}</span>
-                    <strong>
-                      <b style="color: #FBFF23;">{{ gender }}</b>
-                    </strong>
-                    <div class="ui divider"></div>
-                    <h3>{{ lab_name }}</h3>
-                    <h3>{{ lab_overview }}</h3>
-                    <h3>{{ context }}</h3>
-                  </h2>
-                </article>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
+    <h1>{{ json_data }}</h1>
+    <div class="ui divider"></div>
+    <h3>{{ name }}</h3>
+    <h3>{{ gender }}</h3>
+    <h3>{{ lab_name }}</h3>
+    <h3>{{ lab_overview }}</h3>
+    <h3>{{ context }}</h3>
   </div>
 </template>
 
 <script>
 
-  import user from '../assets/api_user.json'
+  var GET_URL = "http://localhost:3000/users/";
 
   export default {
     el: '#user',
     name: 'user',
     data() {
       return {
-        json_data: user,
-        name: user.name,
-        gender: user.gender,
-        lab_name: user.lab["name"],
-        lab_overview: user.lab["overview"],
-        context: user.context,
-        visible: 'visible !important',
+        json_data: '',
+        name: '',
+        gender: '',
+        lab_name: '',
+        lab_overview: '',
+        context: '',
+        visible: '',
         loading: false,
       }
+    },
+    created() {
+      axios.get(GET_URL)
+        .then(response => {
+          this.json_data = response.data;
+          this.name = response.data[0].name;
+          this.gender = response.data[0].gender;
+          this.lab_name = response.data[0].lab.name;
+          this.lab_overview = response.data[0].lab.overview;
+          this.context = response.data[0].context;
+        }).catch(err => {
+        console.log('err:', err);
+      });
+
+
+      axios.get(GET_URL, {
+        withCredentials: true
+      }).then(response => {
+        console.log('body:', response.data);     // response body.
+      }).catch(err => {
+        console.log('err:', err);
+      });
     }
   }
 </script>
