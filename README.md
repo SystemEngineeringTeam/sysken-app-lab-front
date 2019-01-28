@@ -19,3 +19,16 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Code Format
+
+``` bash
+# install prettier
+npm install prettier -D
+
+# make a path
+export PATH=$PATH:./node_modules/.bin
+
+# format the code
+prettier app.js --write
+```
