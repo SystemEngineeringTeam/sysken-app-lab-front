@@ -1,16 +1,13 @@
 <template>
-  <div id="app" class="h-100">
-    <router-view/>
-  </div>
+  <div id="app" class="h-100"><router-view /></div>
 </template>
 
 <script>
-  export default {
-    name: 'App',
-    component: {}
-  }
+import Header from "./components/Header.vue";
+export default {
+  name: "App",
+  components: {}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
