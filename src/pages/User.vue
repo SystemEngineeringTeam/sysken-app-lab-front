@@ -1,7 +1,7 @@
 <template>
-  <div id="user" v-cloak>
+  <div v-cloak>
     <Header></Header>
-    <card></card>
+    <Card></Card>
   </div>
 </template>
 
@@ -9,10 +9,9 @@
 import Header from "../components/Header.vue";
 import Card from "../components/UserCard.vue";
 
-var GET_URL = "http://localhost:3000/users/1";
+var GET_URL = "http://localhost:3000/users";
 
 export default {
-  el: "#user",
   name: "user",
   components: {
     Header,
