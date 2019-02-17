@@ -9,7 +9,7 @@
 import Header from "../components/Header.vue";
 import Card from "../components/UserCard.vue";
 
-var GET_URL = "http://localhost:3000/users";
+var GET_URL = "http://localhost:3000/users/";
 
 export default {
   name: "user",
