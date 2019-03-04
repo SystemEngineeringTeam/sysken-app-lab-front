@@ -5,6 +5,7 @@ import Login from "@/pages/Login";
 import Users from "@/pages/Users";
 import UserRegister from "@/pages/UserRegister";
 import LabRegister from "@/pages/LabRegister";
+import LabProfile from "@/pages/LabProfile";
 import User from "@/pages/UserProfile"
 import Universities from "@/pages/Universities";
 import University from "@/pages/University";
@@ -29,7 +30,9 @@ export default new Router({
     },
     {
       // ID番目のラボについて
-      path: "/lab/:id"
+      path: "/lab/:id",
+      name: "LabProfile",
+      component: LabProfile
     },
     {
       // ユーザーの人気,トレンド載せたい

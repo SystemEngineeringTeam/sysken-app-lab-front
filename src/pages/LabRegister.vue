@@ -9,7 +9,12 @@
         method="POST"
         style="height: 80%"
       >
-        <img class="flex-fill" src="../assets/image/labRegister.svg" alt="" height="20%" />
+        <img
+          class="flex-fill"
+          src="../assets/image/labRegister.svg"
+          alt=""
+          height="20%"
+        />
         <div class="card-body text-justify text-center d-flex flex-column">
           <h1 class="card-title flex-fill"><strong>研究室新規登録</strong></h1>
           <label for="inputEmail" class="sr-only"
