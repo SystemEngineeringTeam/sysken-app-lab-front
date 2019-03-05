@@ -1,5 +1,4 @@
 <template>
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4" v-for="card in cards">
@@ -23,22 +22,20 @@
 </template>
 
 <script>
-var GET_URL = "http://localhost:3000/labs/1";
+var GET_URL = "http://localhost:3000/labs";
 
 export default {
-  name: "Card",
+  name: "card",
   data() {
     return {
-      cards: [],
-      json_data: ""
+      cards: ""
     };
   },
   created() {
     axios
       .get(GET_URL)
       .then(response => {
-        this.json_data = response.data;
-        this.cards.push(response.data);
+        this.cards = response.data;
       })
       .catch(err => {
         console.log("err:", err);

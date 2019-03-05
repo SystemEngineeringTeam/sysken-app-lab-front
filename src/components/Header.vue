@@ -17,10 +17,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8080/lab"> 研究室 </a>
+            <a class="nav-link" href="http://localhost:8080/lab">
+              研究室一覧
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8080/user"> ユーザ </a>
+            <a class="nav-link" href="http://localhost:8080/users/">
+              ユーザ一覧
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="http://localhost:8080/login">

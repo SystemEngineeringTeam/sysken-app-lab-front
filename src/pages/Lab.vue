@@ -1,5 +1,5 @@
 <template>
-  <div id="lab">
+  <div>
     <Header></Header>
     <card></card>
   </div>
@@ -12,7 +12,6 @@ import Header from "../components/Header.vue";
 var GET_URL = "http://localhost:3000/labs/1";
 
 export default {
-  el: "#lab",
   name: "lab",
   components: {
     Card,

@@ -1,5 +1,4 @@
 <template>
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-4" v-for="card in cards">
@@ -13,6 +12,7 @@
             <h2 class="card-title">{{ card.name }}</h2>
             <h3>{{ card.gender }}</h3>
             <h4>{{ card.grade }}</h4>
+            <h4>{{ card.email }}</h4>
             <p class="card-text">{{ card.lab.name }}</p>
             <p class="card-text">{{ card.lab.overview }}</p>
             <p class="card-text">{{ card.context }}</p>
@@ -25,22 +25,20 @@
 </template>
 
 <script>
-var GET_URL = "http://localhost:3000/users/1";
+var GET_URL = "http://localhost:3000/users";
 
 export default {
-  name: "Card",
+  name: "card",
   data() {
     return {
-      cards: [],
-      json_data: ""
+      cards: ""
     };
   },
   created() {
     axios
       .get(GET_URL)
       .then(response => {
-        this.json_data = response.data;
-        this.cards.push(response.data);
+        this.cards = response.data;
       })
       .catch(err => {
         console.log("err:", err);
