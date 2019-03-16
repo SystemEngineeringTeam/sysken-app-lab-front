@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4 col-sm-6" v-for="card in cards">
+      <div class="col-md-4 col-sm-6" v-for="card in hitcards">
         <div class="card w-100 my-3">
           <a :href="'/labs/' + card.id" class="text-deco-none">
             <img
@@ -30,10 +30,32 @@ var GET_URL = "http://localhost:3000/labs";
 
 export default {
   name: "card",
+  props: ["search_word", "search_prefecture"],
   data() {
     return {
       cards: ""
     };
+  },
+  computed: {
+    // リアルタイム検索機能
+    hitcards: function() {
+      var cards = [];
+
+      for (var i in this.cards) {
+        var card = this.cards[i];
+
+        if (
+          card.prefecture == this.search_prefecture &&
+          (card.name.includes(this.search_word) ||
+            card.university.includes(this.search_word) ||
+            card.prefecture.includes(this.search_word) ||
+            card.overview.includes(this.search_word))
+        ) {
+          cards.push(card);
+        }
+      }
+      return cards;
+    }
   },
   created() {
     axios
@@ -49,8 +71,8 @@ export default {
 </script>
 
 <style scoped>
-  .text-deco-none {
-    text-decoration: none;
-    color: black;
-  }
+.text-deco-none {
+  text-decoration: none;
+  color: black;
+}
 </style>
