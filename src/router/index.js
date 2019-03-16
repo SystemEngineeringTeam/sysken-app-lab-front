@@ -24,13 +24,13 @@ export default new Router({
     },
     {
       // ラボ一覧画面
-      path: "/lab",
-      name: "Lab",
+      path: "/labs",
+      name: "Labs",
       component: Lab
     },
     {
       // ID番目のラボについて
-      path: "/lab/:id",
+      path: "/labs/:id",
       name: "LabProfile",
       component: LabProfile
     },
@@ -51,6 +51,18 @@ export default new Router({
       path: "/signup",
       name: "UserRegister",
       component: UserRegister
+    },
+    {
+      // ログイン登録画面
+      path: "/login",
+      name: "Login",
+      component: Login
+    },
+    {
+      // 研究室登録画面
+      path: "/lab/add",
+      name: "LabRegister",
+      component: LabRegister
     },
     {
       // 大学一覧画面

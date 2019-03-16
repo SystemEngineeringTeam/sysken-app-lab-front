@@ -3,6 +3,7 @@
     <div class="row">
       <div class="col-md-4" v-for="card in cards">
         <div class="card w-100 my-3">
+          <a :href="'/users/' + card.id" class="text-deco-none">
           <img
             class="card-img-top img-fluid"
             src="https://placehold.jp/300x200.png"
@@ -16,8 +17,9 @@
             <p class="card-text">{{ card.lab.name }}</p>
             <p class="card-text">{{ card.lab.overview }}</p>
             <p class="card-text">{{ card.context }}</p>
-            <a href="#!" class="btn btn-primary">Go somewhere</a>
+            <a :href="'/users/' + card.id" class="btn btn-primary">もっと見る！</a>
           </div>
+          </a>
         </div>
       </div>
     </div>
@@ -47,4 +49,13 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+  .text-deco-none {
+    text-decoration: none;
+    color: black;
+  }
+
+  .text-deco-none:hover {
+    opacity: 0.7;
+  }
+</style>
