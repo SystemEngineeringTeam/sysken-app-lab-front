@@ -48,9 +48,21 @@ export default new Router({
     },
     {
       // ユーザー登録画面
-      path: "/signup",
+      path: "/signup/user",
       name: "UserRegister",
       component: UserRegister
+    },
+    {
+      // ユーザー登録画面
+      path: "/login",
+      name: "Login",
+      component: Login
+    },
+    {
+      // ユーザー登録画面
+      path: "/signup/lab",
+      name: "LabRegister",
+      component: LabRegister
     },
     {
       // 大学一覧画面

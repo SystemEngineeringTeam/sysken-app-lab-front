@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="/">Lab Finder</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -27,17 +27,17 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8080/login">
+            <a class="nav-link" href="/login">
               ログイン
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8080/userregister">
+            <a class="nav-link" href="/signup/user">
               ユーザ登録
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8080/labregister">
+            <a class="nav-link" href="/signup/lab">
               研究室登録
             </a>
           </li>
