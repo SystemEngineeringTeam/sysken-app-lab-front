@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-4 col-sm-6" v-for="card in cards">
         <div class="card w-100 my-3">
-          <a :href="'/lab/' + card.id" class="text-deco-none">
+          <a :href="'/labs/' + card.id" class="text-deco-none">
             <img
               class="card-img-top img-fluid"
               src="https://placehold.jp/300x200.png"
@@ -14,7 +14,7 @@
               <h3>{{ card.university }}</h3>
               <h4>{{ card.prefecture }}</h4>
               <p class="card-text">{{ card.overview }}</p>
-              <a :href="'/lab/' + card.id" class="btn btn-primary"
+              <a :href="'/labs/' + card.id" class="btn btn-primary"
                 >詳しく見る！</a
               >
             </div>
