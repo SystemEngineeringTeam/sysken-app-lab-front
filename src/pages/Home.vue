@@ -2,10 +2,16 @@
   <div id="app">
     <Header></Header>
     <Carousel></Carousel>
-    <search></search>
+    <search
+      :search_prefecture.sync="search_prefecture"
+      :search_word.sync="search_word"
+    ></search>
     <section>
       <h1 class="text-center my-5">- 研究室一覧 -</h1>
-      <LabCard></LabCard>
+      <LabCard
+        :search_word.sync="search_word"
+        :search_prefecture.sync="search_prefecture"
+      ></LabCard>
     </section>
   </div>
 </template>
@@ -14,10 +20,16 @@
 import Header from "../components/Header";
 import Carousel from "../components/Carousel";
 import LabCard from "../components/LabCard";
-import Search from "../components/SearchEngine"
+import Search from "../components/SearchEngine";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      search_word: "",
+      search_prefecture: ""
+    };
+  },
   components: {
     Header,
     Carousel,
