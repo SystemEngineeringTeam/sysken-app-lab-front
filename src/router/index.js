@@ -53,13 +53,13 @@ export default new Router({
       component: UserRegister
     },
     {
-      // ユーザー登録画面
+      // ログイン登録画面
       path: "/login",
       name: "Login",
       component: Login
     },
     {
-      // ユーザー登録画面
+      // 研究室登録画面
       path: "/signup/lab",
       name: "LabRegister",
       component: LabRegister

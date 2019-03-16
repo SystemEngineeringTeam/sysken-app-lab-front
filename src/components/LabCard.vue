@@ -1,20 +1,24 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-4" v-for="card in cards">
+      <div class="col-md-4 col-sm-6" v-for="card in cards">
         <div class="card w-100 my-3">
-          <img
-            class="card-img-top img-fluid"
-            src="https://placehold.jp/300x200.png"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h2 class="card-title">{{ card.name }}</h2>
-            <h3>{{ card.university }}</h3>
-            <h4>{{ card.prefecture }}</h4>
-            <p class="card-text">{{ card.overview }}</p>
-            <a href="#!" class="btn btn-primary">Go somewhere</a>
-          </div>
+          <a :href="'/lab/' + card.id" class="text-deco-none">
+            <img
+              class="card-img-top img-fluid"
+              src="https://placehold.jp/300x200.png"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h2 class="card-title">{{ card.name }}</h2>
+              <h3>{{ card.university }}</h3>
+              <h4>{{ card.prefecture }}</h4>
+              <p class="card-text">{{ card.overview }}</p>
+              <a :href="'/lab/' + card.id" class="btn btn-primary"
+                >詳しく見る！</a
+              >
+            </div>
+          </a>
         </div>
       </div>
     </div>
@@ -44,4 +48,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+  .text-deco-none {
+    text-decoration: none;
+    color: black;
+  }
+</style>

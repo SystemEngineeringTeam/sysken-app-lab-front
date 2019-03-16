@@ -13,8 +13,9 @@ export default {
     };
   },
   created() {
+    const GET_URL = "http://localhost:3000/users/" + this.$route.params.id;
     axios
-      .get("http://localhost:3000/users/" + this.$route.params.id)
+      .get(GET_URL)
       .then(response => {
         this.user_profile = response.data;
       })
