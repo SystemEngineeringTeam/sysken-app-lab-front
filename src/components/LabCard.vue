@@ -44,14 +44,36 @@ export default {
       for (var i in this.cards) {
         var card = this.cards[i];
 
-        if (
-          card.prefecture == this.search_prefecture &&
-          (card.name.includes(this.search_word) ||
+        if (this.search_word == "" && this.search_prefecture == "") {
+          cards.push(card);
+          continue;
+        }
+
+        if (this.search_word !== "" && this.search_prefecture == "") {
+          if (
+            card.name.includes(this.search_word) ||
             card.university.includes(this.search_word) ||
             card.prefecture.includes(this.search_word) ||
-            card.overview.includes(this.search_word))
-        ) {
-          cards.push(card);
+            card.overview.includes(this.search_word)
+          ) {
+            cards.push(card);
+            continue;
+          }
+        } else if (this.search_word == "" && this.search_prefecture !== "") {
+          if (this.search_prefecture == card.prefecture) {
+            cards.push(card);
+            continue;
+          }
+        } else {
+          if (
+            this.search_prefecture == card.prefecture &&
+            (card.name.includes(this.search_word) ||
+              card.university.includes(this.search_word) ||
+              card.prefecture.includes(this.search_word) ||
+              card.overview.includes(this.search_word))
+          ) {
+            cards.push(card);
+          }
         }
       }
       return cards;
