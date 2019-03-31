@@ -7,11 +7,9 @@
             @change="choosedCover($event)"
             id="img-selector1"
             type="file"/><img
-            class="w-100"
+            class="w-100 profile-imgs-logo"
             :src="imageData[0]"
             v-if="imageData[0]"
-            v-on:mouseover="mouseoverCover"
-            v-on:mouseleave="mouseleaveCover"
         /></label>
       </div>
       <div>
@@ -23,8 +21,6 @@
             class="profile-imgs-icon position-absolute rounded-lg img-thumbnail col-5 col-md-3"
             :src="imageData[1]"
             v-if="imageData[1]"
-            v-on:mouseover="mouseoverLogo"
-            v-on:mouseleave="mouseleaveLogo"
         /></label>
       </div>
     </div>
@@ -47,26 +43,6 @@ export default {
     };
   },
   methods: {
-    mouseoverCover: function() {
-      $(".profile-imgs > div:nth-of-type(1) img").css({
-        opacity: 0.3
-      });
-    },
-    mouseleaveCover: function() {
-      $(".profile-imgs > div:nth-of-type(1) img").css({
-        opacity: 1
-      });
-    },
-    mouseoverLogo: function() {
-      $(".profile-imgs > div:nth-of-type(2) img").css({
-        opacity: 0.7
-      });
-    },
-    mouseleaveLogo: function() {
-      $(".profile-imgs > div:nth-of-type(2) img").css({
-        opacity: 1
-      });
-    },
     choosedCover(img) {
       const files = img.target.files;
 
@@ -82,6 +58,7 @@ export default {
     },
     choosedLogo(img) {
       const files = img.target.files;
+
       if (files.length > 0) {
         const file = files[0];
         const reader = new FileReader();
@@ -112,5 +89,9 @@ label > input {
   max-height: 200px;
   bottom: -20%;
   left: 3%;
+}
+.profile-imgs-icon:hover,
+.profile-imgs-logo:hover {
+  opacity: 0.7;
 }
 </style>
