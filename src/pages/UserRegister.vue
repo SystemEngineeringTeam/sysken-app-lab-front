@@ -5,8 +5,6 @@
       <form
         class="card col-lg-7 text-justify text-center d-flex flex-column"
         enctype="multipart/form-data"
-        action="UserRegister"
-        method="POST"
         style="height: 80%"
       >
         <img
@@ -20,32 +18,32 @@
         <input
           type="email"
           id="inputEmail"
-          name="form-email"
           class="form-control form-control-first card-text flex-fill"
           placeholder="sample@sample.com"
           required
           autofocus
+          v-model="email"
         />
         <label for="inputPassword" class="sr-only">パスワード</label>
         <input
           type="password"
-          name="form-pwd"
           id="inputPassword"
           class="form-control form-control-last card-text flex-fill"
           placeholder="パスワード"
           required
+          v-model="password"
         />
         <label for="inputName" class="sr-only">あなたの名前</label>
         <input
           type="text"
           id="inputName"
-          name="form-name"
           class="form-control card-text flex-fill"
           placeholder="あなたの名前"
           required
+          v-model="name"
         />
         <label class="sr-only">性別</label>
-        <select class="form-control card-text flex-fill">
+        <select class="form-control card-text flex-fill" v-model="gender">
           <option disabled="disabled" selected>性別</option>
           <option value="1">男</option>
           <option value="2">女</option>
@@ -53,28 +51,32 @@
         <label class="sr-only">所属研究室</label>
         <input
           type="text"
-          name="form-position"
           class="form-control card-text flex-fill"
           placeholder="所属研究室"
           required
+          v-model="lab"
         />
         <label class="sr-only">研究内容</label>
         <input
           type="text"
-          name="form-phone"
           class="form-control card-text flex-fill"
           placeholder="研究内容"
           required
+          v-model="theme"
         />
         <label class="sr-only">コンテキスト</label>
         <input
           type="textarea"
-          name="form-message"
           class="form-control card-text flex-fill"
           placeholder="ex) こんにちは！私は〇〇です．．．．"
           required
+          v-model="message"
         />
-        <button class="btn btn-lg btn-primary btn-block" type="submit">
+        <button
+          v-on:click="sendData"
+          class="btn btn-lg btn-primary btn-block"
+          type="submit"
+        >
           登録する！
         </button>
         <p
@@ -96,7 +98,37 @@ export default {
     Header
   },
   data() {
-    return {};
+    return {
+      email: "",
+      password: "",
+      name: "",
+      gender: "",
+      lab: "",
+      theme: "",
+      message: ""
+    };
+  },
+  methods: {
+    sendData: function() {
+      var hostName = window.location.hostname,
+        protocol = window.location.protocol,
+        port = 3000,
+        sendURL = [protocol, "//", hostName, ":", port, "/signup"].join("");
+
+      axios
+        .post(sendURL, {
+          email: this.email,
+          password: this.password,
+          name: this.name,
+          gender: this.gender,
+          lab: this.lab,
+          theme: this.theme,
+          message: this.message
+        })
+        .catch(err => {
+          console.log("err:", err);
+        });
+    }
   }
 };
 </script>
